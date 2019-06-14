@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Cyberpunk 2077 Collector's Availability</title>
+
+    <link rel="stylesheet" href="index.css" />
+    <!-- vuejs -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1 class="title">Cyberpunk 2077</h1>
+        <h2 class="subtitle">Collector's Edition</h2>
+      </header>
+      <countdown></countdown>
+      <h3 class="stores">US Retailers</h3>
+      <ul class="stores__list">
+        <li v-for="store of stores" :key="store.slug" class="stores__item">
+          <a :href="store.url" target="_blank">
+            {{ store.name }}
+          </a>
+          <span v-if="!store.url" class="availability availability--no">not yet available</span>
+          <span v-else class="availability availability--yes">available!</span>
+        </li>
+      </ul>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

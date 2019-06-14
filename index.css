@@ -1,0 +1,75 @@
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Open Sans', 'Helvetica Neue', sans-serif;
+  background: #121212;
+  color: #fafafa;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 4rem;
+  letter-spacing: 0.5rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  font-weight: 400;
+  text-align: center;
+  margin-top: -2.5rem;
+}
+
+.stores {
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  font-weight: 700;
+}
+
+.stores__list {
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.stores__item {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  padding: 2rem 0.5rem;
+  border-radius: 3px;
+  display: grid;
+  place-items: center center;
+  background: hsla(0, 100%, 100%, 2%);
+}
+
+.availability--yes {
+  color: #41b883;
+}
+.availability--no {
+  color: #dc3545;
+}
+
+@media screen and (min-width: 500px) {
+  .stores__item {
+    grid-template-columns: 1fr 1fr;
+    width: 40%;
+  }
+}
