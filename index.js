@@ -29,10 +29,12 @@ const app = new Vue({
   data: {
     stores: []
   },
-  async created() {
+  created() {
     // fetch the collectors edition
-    res = await fetch('http://localhost:3000');
-    json = await res.json();
-    this.stores = await json.collectors.pc.retail;
+    setInterval(async () => {
+      res = await fetch('http://localhost:3000');
+      json = await res.json();
+      this.stores = await json.collectors.pc.retail;
+    }, 30000);
   }
 });
